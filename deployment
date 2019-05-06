@@ -1,0 +1,13 @@
+   New-AzureRmResourceGroupDeployment -ResourceGroupName $resourceGroupName -TemplateFile $templateFilePath -TemplateParameterFile $parametersFilePath;
+   
+   
+   New-AzResourceGroupDeployment -Name ExampleDeployment -ResourceGroupName ExampleResourceGroup `
+  -TemplateUri https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/101-storage-account-create/azuredeploy.json `
+  -TemplateParameterUri https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/101-storage-account-create/azuredeploy.parameters.json
+   
+   az group create --name ExampleGroup --location "Central US"
+  az group deployment create \
+  --name ExampleDeployment \
+  --resource-group ExampleGroup \
+  --template-uri "" \
+  --parameters-uri "" \
